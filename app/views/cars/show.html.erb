@@ -1,2 +1,12 @@
 <h1>Cars#show</h1>
 <p>Find me in app/views/cars/show.html.erb</p>
+
+<h2>
+  <%= "#{@car.brand} #{@car.model}"%>
+</h2>
+<ul>
+  <li><%= "Year: #{@car.year}" %></li>
+  <li><%= "Horse power: #{@car.horse_power}" %></li>
+  <li><%= "Price: #{@car.price}€/day" %></li>
+</ul>
+<p><%= @car.description %></p>

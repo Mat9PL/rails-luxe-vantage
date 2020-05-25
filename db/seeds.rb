@@ -11,12 +11,12 @@ Car.destroy_all
 
 15.times do
   avatar = "https://source.unsplash.com/random"
-  name = Faker::Name
-  password = Faker::Hipster.word
+  username = Faker::Name.name
+  password = Faker::Lorem.characters(number: 10)
   email = Faker::Internet.email
   description = Faker::Hipster.sentence
   address = Faker::Address.street_address
-  new_user = User.new(avatar: avatar, name: name, password: password, email: email, description: description, address: address)
+  new_user = User.new(avatar: avatar, username: username, password: password, email: email, description: description, address: address)
   new_user.save!
 end
 

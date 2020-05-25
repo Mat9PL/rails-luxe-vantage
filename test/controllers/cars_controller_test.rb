@@ -10,7 +10,7 @@ class CarsControllerTest < ActionDispatch::IntegrationTest
     get cars_show_url
     assert_response :success
   end
-
+  
   test "should get new" do
     get cars_new_url
     assert_response :success

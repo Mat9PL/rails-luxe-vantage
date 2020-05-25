@@ -18,12 +18,22 @@ class CarsController < ApplicationController
     redirect_to car_path(@car)
   end
 
-private
+  def edit
+    @car = Car.find(params[:id])
+  end
 
-def car_params
-  params.require(:car).permit(:brand, :model, :year, :horse_power, :price, :description, :user_id)
+  def update
+    @car = Car.find(params[:id])
+    @car.update(car_params)
 
+    # no need for app/views/restaurants/update.html.erb
+    redirect_to car_path(@car)
+  end
 
-end
+  private
+
+  def car_params
+    params.require(:car).permit(:brand, :model, :year, :horse_power, :price, :description, :user_id)
+  end
 end
 

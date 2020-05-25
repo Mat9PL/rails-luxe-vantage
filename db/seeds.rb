@@ -29,4 +29,5 @@ end
   price = rand(50..600)
   user_id = User.all.sample.id
   new_car = Car.new(brand: brand, model: model, year: year, description: description, horse_power: horse_power, price: price, user_id: user_id)
+  new_car.save!
 end

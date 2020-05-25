@@ -2,6 +2,17 @@
 <p>Find me in app/views/cars/index.html.erb</p>
 <ul>
   <% @cars.each do |car| %>
-    <li><%= car.brand %></li>
+    <li>
+    <%= link_to car_path(car) do %>
+      <h2>
+        <%= "#{car.brand} #{car.model}"%>
+      </h2>
+      <% end %>
+      <ul>
+        <li><%= "Year: #{car.year}" %></li>
+        <li><%= "Horse power: #{car.horse_power}" %></li>
+        <li><%= "Price: #{car.price}" %></li>
+      </ul>
+    </li>
   <% end %>
 </ul>

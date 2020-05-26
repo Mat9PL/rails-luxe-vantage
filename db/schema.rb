@@ -47,6 +47,7 @@ ActiveRecord::Schema.define(version: 2020_05_26_131953) do
     t.datetime "updated_at", precision: 6, null: false
     t.string "brand"
     t.bigint "user_id"
+    t.string "photo"
     t.index ["user_id"], name: "index_cars_on_user_id"
   end
 

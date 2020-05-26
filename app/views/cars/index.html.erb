@@ -1,21 +1,22 @@
 <h1>Cars#index</h1>
 <p>Find me in app/views/cars/index.html.erb</p>
-<ul>
+<ul class="card-list">
   <% @cars.each do |car| %>
-    <li>
-    <%= link_to car_path(car) do %>
-      <h2>
-        <%= "#{car.brand} #{car.model}"%>
-      </h2>
-      <% end %>
-      <ul>
-        <li><%= "Year: #{car.year}" %></li>
-        <li><%= "Horse power: #{car.horse_power}" %></li>
-        <li><%= "Price: #{car.price}€/day" %></li>
-      </ul>
+    <li class="card-car">
+      <%= image_tag car.photo %>
+      <div class="card-car-infos">
+        <div>
+          <%= link_to car_path(car) do %>
+            <h2><%= "#{car.brand} #{car.model}"%></h2>
+          <% end %>
+          <p><%= "Year: #{car.year} | Horse power: #{car.horse_power}" %></p>
+        </div>
+        <h2 class="card-car-pricing"><%= "#{car.price}€ per day" %></h2>
+        <%= image_tag car.user.avatar, class: "card-car-user avatar-bordered" %>
+      </div>
     </li>
   <% end %>
-  <li>
+  <li class="card-car">
     <h2>
     <%= link_to 'Add new car', new_car_path %>
     </h2>

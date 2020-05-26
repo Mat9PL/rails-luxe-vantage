@@ -11,6 +11,10 @@
 </ul>
 <p><%= @car.description %></p>
 
+<% @car.photos.each do |photo| %>
+  <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
+<% end %>
+
 <% if policy(@car).update? %>
   <p><%= link_to 'modify car', edit_car_path %></p>
 <% end %>

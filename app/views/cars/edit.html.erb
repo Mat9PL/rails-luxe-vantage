@@ -1,17 +1,1 @@
-<%= form_for(@car) do |f| %>
-  <%= f.label :brand %>
-  <%= f.text_field :brand %>
-  <%= f.label :model %>
-  <%= f.text_field :model %>
-  <%= f.label :year %>
-  <%= f.text_field :year %>
-  <%= f.label :description %>
-  <%= f.text_field :description %>
-  <%= f.label :horse_power %>
-  <%= f.text_field :horse_power %>
-  <%= f.label :price %>
-  <%= f.number_field :price %>
-  <%= f.label :user_id %>
-  <%= f.number_field :user_id %>
-  <%= f.submit %>
-<% end %>
+<%= render "form", car: @car %>

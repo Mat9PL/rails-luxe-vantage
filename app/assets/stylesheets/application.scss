@@ -1,3 +1,10 @@
+$blond: #F3E9B5;
+$wheat: #E1CA96;
+$sage: rgb(151, 144, 78);
+$middle-grey: #918B76;
+$ebony: #626C66;
+$black-olive: #434A42;
+
 // Graphical variables
 @import "config/fonts";
 @import "config/colors";
@@ -11,3 +18,7 @@
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
+
+body {
+  background-color: $wheat;
+}

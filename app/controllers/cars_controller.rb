@@ -1,36 +1,39 @@
 class CarsController < ApplicationController
 before_action :set_car, only: [:show, :edit, :destroy, :update]
   def index
-    @cars = Car.all
+    @cars = policy_scope(Car)
   end
-
+  
   def show
+    authorize @car
   end
-
+  
   def new
     @car = Car.new
+    authorize @car
   end
 
   def create
     @car = Car.new(car_params)
+    authorize @car
     @car.save
 
     redirect_to car_path(@car)
   end
 
   def edit
-    @car = Car.find(params[:id])
+    authorize @car
   end
 
   def update
-    @car = Car.find(params[:id])
+    authorize @car
     @car.update(car_params)
 
-  redirect_to car_path(@car)
+    redirect_to car_path(@car)
   end
 
   def destroy
-    @car = Car.find(params[:id])
+    authorize @car
     @car.destroy
 
     redirect_to cars_path

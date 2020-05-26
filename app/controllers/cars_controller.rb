@@ -3,11 +3,11 @@ before_action :set_car, only: [:show, :edit, :destroy, :update]
   def index
     @cars = policy_scope(Car)
   end
-  
+
   def show
     authorize @car
   end
-  
+
   def new
     @car = Car.new
     authorize @car
@@ -18,7 +18,11 @@ before_action :set_car, only: [:show, :edit, :destroy, :update]
     authorize @car
     @car.save
 
-    redirect_to car_path(@car)
+    if @car.save
+      redirect_to car_path(@car)
+    else
+      render "form"
+    end
   end
 
   def edit
@@ -42,7 +46,7 @@ before_action :set_car, only: [:show, :edit, :destroy, :update]
   private
 
   def car_params
-    params.require(:car).permit(:brand, :model, :year, :horse_power, :price, :description, :user_id)
+    params.require(:car).permit(:brand, :model, :year, :horse_power, :price, :description, :user_id, photos: [])
   end
 
   def set_car

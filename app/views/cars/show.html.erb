@@ -11,4 +11,7 @@
 </ul>
 <p><%= @car.description %></p>
 
+<p><%= link_to 'modify car', edit_car_path %></p>
+<p><%= link_to 'delete car', car_path, method: :delete %></p>
 <%= link_to 'back to main menu', cars_path %>
+

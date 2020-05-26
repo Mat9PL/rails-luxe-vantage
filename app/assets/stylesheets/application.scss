@@ -1,8 +1,8 @@
-$blond: #F3E9B5;
+$blond: rgb(252, 248, 232);
 $wheat: #E1CA96;
-$sage: rgb(151, 144, 78);
+$sage: rgb(134, 128, 87);
 $middle-grey: #918B76;
-$ebony: #626C66;
+$ebony: rgb(201, 201, 201);
 $black-olive: #434A42;
 
 // Graphical variables
@@ -20,5 +20,5 @@ $black-olive: #434A42;
 @import "pages/index";
 
 body {
-  background-color: $wheat;
+  background-color: $blond;
 }

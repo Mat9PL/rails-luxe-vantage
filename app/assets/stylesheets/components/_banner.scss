@@ -7,14 +7,17 @@
 .banner h1 {
   margin: 0;
   color: $blond;
-  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
-  font-size: 32px;
+  text-shadow: 1px 1px 3px rgba(7, 0, 0, 0.2);
+  font-size: 36px;
   font-weight: bold;
+  text-align: center;
+  margin: 50px;
 }
 
 .banner p {
-  font-size: 20px;
+  font-size: 28px;
   color: $blond;
   opacity: 0.7;
-  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  text-shadow: 1px 1px 3px rgba(7, 0, 0, 0.2);
+  text-align: center;
 }

@@ -43,7 +43,7 @@ end
   photo = images[index]
   model = Faker::Vehicle.model(make_of_model: 'Toyota')
   year = rand(1950..2020)
-  description = Faker::Hipster.paragraphs(number: 10).join("\n")
+  description = Faker::Hipster.paragraphs(number: 10).join("\n\n")
   horse_power = rand(100..500)
   price = rand(50..600)
   user_id = User.all.sample.id

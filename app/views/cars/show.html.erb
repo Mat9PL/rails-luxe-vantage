@@ -1,9 +1,10 @@
-<h1>Cars#show</h1>
-<p>Find me in app/views/cars/show.html.erb</p>
+<%= link_to 'back to main menu', cars_path %>
+<div class="card-car">
 
 <h2>
   <%= "#{@car.brand} #{@car.model}"%>
 </h2>
+
 
 <%= image_tag @car.photo %>
 <div class="card-car-infos">
@@ -28,9 +29,6 @@
 <% if policy(@car).destroy? %>
 <p><%= link_to 'delete car', car_path, method: :delete %></p>
 <% end %>
-
-
-
+</div>
 
 <%= link_to 'back to main menu', cars_path %>
-

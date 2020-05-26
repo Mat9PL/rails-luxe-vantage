@@ -1,25 +1,23 @@
-<%= render 'banner' %>
+</div>
+  <%= render 'banner' %>
 <div class="container">
-  <ul class="card-list">
-    <% @cars.each do |car| %>
-      <li class="card-car">
-        <%= image_tag car.photo %>
-        <div class="card-car-infos">
-          <div>
-            <%= link_to car_path(car) do %>
-              <h2><%= "#{car.brand} #{car.model}"%></h2>
-            <% end %>
-            <p><%= "Year: #{car.year} | Horse power: #{car.horse_power}" %></p>
-          </div>
-          <h2 class="card-car-pricing"><%= "#{car.price}€ per day" %></h2>
-          <%= image_tag car.user.avatar, class: "card-car-user avatar-bordered" %>
+<div class="card-list">
+  <% @cars.each do |car| %>
+    <%= link_to car_path(car), class: "card-car" do %>
+      <%= image_tag car.photo %>
+      <div class="card-car-infos">
+        <div>
+            <h2><%= "#{car.brand} #{car.model}"%></h2>
+          <p><%= "Year: #{car.year} | Horse power: #{car.horse_power}" %></p>
         </div>
-      </li>
+        <h2 class="card-car-pricing"><%= "#{car.price}€ per day" %></h2>
+        <%= image_tag car.user.avatar, class: "card-car-user avatar-bordered" %>
+      </div>
     <% end %>
-    <li class="card-car">
-      <h2>
-      <%= link_to 'Add new car', new_car_path %>
-      </h2>
-    </li>
-  </ul>
+  <% end %>
+  <%= link_to new_car_path, class: "card-car" do %>
+    <h2>Add new car</h2>
+    <div class="card-car-infos">
+    </div>
+  <% end %>
 </div>

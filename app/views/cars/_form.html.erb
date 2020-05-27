@@ -6,6 +6,6 @@
   <%= f.input :horse_power %>
   <%= f.input :price %>
   <%= f.input :photos, as: :file, input_html: { multiple: true } %>
-  <%= f.input :user_id %>
+  <% f.input :user_id, :as => :hidden, :input_text => { :value => 5 } %>
   <%= f.submit %>
 <% end %>

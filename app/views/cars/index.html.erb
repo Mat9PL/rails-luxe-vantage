@@ -1,11 +1,20 @@
 </div>
   <%= render 'banner' %>
 <div class="container">
+
+<div id="map"
+     style="width: 100%; height: 600px;"
+     data-markers="<%= @markers.to_json %>"
+     data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+</div>
+
 <div class="card-list">
   <% @cars.each do |car| %>
     <%= link_to car_path(car), class: "card-car" do %>
-      <%= image_tag car.photo %>
-      <div class="card-car-infos">
+      <% car.photos.each do |photo| %>
+        <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
+      <% end %>
+<div class="card-car-infos">
         <div>
             <h2><%= "#{car.brand} #{car.model}"%></h2>
           <p><%= "Year: #{car.year} | Horse power: #{car.horse_power}" %></p>

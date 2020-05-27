@@ -2,6 +2,16 @@ class CarsController < ApplicationController
 before_action :set_car, only: [:show, :edit, :destroy, :update]
   def index
     @cars = policy_scope(Car)
+
+    @cars = Car.geocoded # returns flats with coordinates
+
+    @markers = @cars.map do |car|
+      {
+        lat: car.latitude,
+        lng: car.longitude,
+        infoWindow: render_to_string(partial: "info_window", locals: { car: car })
+      }
+    end
   end
 
   def show
@@ -15,13 +25,14 @@ before_action :set_car, only: [:show, :edit, :destroy, :update]
 
   def create
     @car = Car.new(car_params)
+    @car.user = current_user
     authorize @car
     @car.save
 
     if @car.save
       redirect_to car_path(@car)
     else
-      render "form"
+      render "new"
     end
   end
 

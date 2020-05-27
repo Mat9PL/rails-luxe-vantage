@@ -1,10 +1,3 @@
-$blond: rgb(252, 248, 232);
-$wheat: #E1CA96;
-$sage: rgb(134, 128, 87);
-$middle-grey: #918B76;
-$ebony: rgb(201, 201, 201);
-$black-olive: #434A42;
-
 // Graphical variables
 @import "config/fonts";
 @import "config/colors";
@@ -18,6 +11,7 @@ $black-olive: #434A42;
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
+@import 'mapbox-gl/dist/mapbox-gl';
 
 body {
   background-color: $blond;

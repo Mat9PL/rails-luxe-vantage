@@ -10,15 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-ActiveRecord::Schema.define(version: 2020_05_26_131953) do
-=======
-ActiveRecord::Schema.define(version: 2020_05_26_120602) do
->>>>>>> 2f578fa6a8ec8f05e2cabc1327c001b24958abf2
-=======
-ActiveRecord::Schema.define(version: 2020_05_26_131953) do
->>>>>>> 5104e93980746ea5cee30e9371f9f45eac59bf94
+ActiveRecord::Schema.define(version: 2020_05_27_095321) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -56,6 +48,9 @@ ActiveRecord::Schema.define(version: 2020_05_26_131953) do
     t.string "brand"
     t.bigint "user_id"
     t.string "photo"
+    t.float "latitude"
+    t.float "longitude"
+    t.string "address"
     t.index ["user_id"], name: "index_cars_on_user_id"
   end
 

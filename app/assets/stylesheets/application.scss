@@ -13,10 +13,6 @@
 @import "pages/index";
 @import 'mapbox-gl/dist/mapbox-gl';
 
-body {
-  background-color: $blond;
-}
-
 .full-screen {
-  min-height: calc(100vh - 236px);
+  min-height: calc(100vh - 140px);
 }

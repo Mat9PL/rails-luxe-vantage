@@ -30,7 +30,6 @@ car_photos = [
   'https://imagescdn.dealercarsearch.com/dealerimages/13225/27219/fxslide3.jpg',
   'https://i.pinimg.com/originals/0b/6c/93/0b6c93a8f983f8cbe1ea0827e11f1212.jpg',
   'https://imagescdn.dealercarsearch.com/dealerimages/14801/26992/vidfallback1.jpg',
-  'https://imagescdn.dealercarsearch.com/dealerimages/11627/27257/fxslide4.jpg',
   'https://d2egmpncr9xdtw.cloudfront.net/wp-content/uploads/2017/04/09920_4044.jpg',
   'https://imagescdn.dealercarsearch.com/dealerimages/11627/27257/fxslide4.jpg',
   'https://classiccarrental.es/wp-content/uploads/2019/06/FOT6.jpg',
@@ -38,8 +37,8 @@ car_photos = [
   'https://i.pinimg.com/originals/0e/e9/f3/0ee9f30a0d4d7b35e1a309b80d023c74.jpg',
 ]
 
-5.times do |index|
-  file = URI.open(car_photos.sample)
+11.times do |index|
+  file = URI.open(car_photos.pop)
   brand = Faker::Vehicle.manufacture
   model = Faker::Vehicle.model(make_of_model: 'Toyota')
   year = rand(1950..2020)
@@ -50,5 +49,5 @@ car_photos = [
   user = User.all.sample
   new_car = Car.new(address: address, brand: brand, model: model, year: year, description: description, horse_power: horse_power, price: price, user: user)
   new_car.save!
-  new_car.photos.attach(io: file, filename: "#{new_car.id}")
+  new_car.photos.attach(io: file, filename: "#{new_car.model} photo #{new_car.id}")
 end

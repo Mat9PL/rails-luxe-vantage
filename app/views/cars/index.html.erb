@@ -7,27 +7,28 @@
 </div>
 
 <div class="container">
-<div class="card-list">
-  <% @cars.each do |car| %>
-    <%= link_to car_path(car), class: "card-car" do %>
-      <% car.photos.each do |photo| %>
-        <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
+  <div class="card-list">
+    <% @cars.each do |car| %>
+      <%= link_to car_path(car), class: "card-car" do %>
+        <% car.photos.each do |photo| %>
+          <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
+        <% end %>
+        <div class="card-car-infos">
+          <div>
+              <h2><%= "#{car.brand} #{car.model}"%></h2>
+            <p><%= "Year: #{car.year} | Address: #{car.address}" %></p>
+          </div>
+          <div class="card-car-pricing">
+            <b><%="#{car.price}€" %></b>/day
+          </div>
+        </div>
       <% end %>
-      <div class="card-car-infos">
-        <div>
-            <h2><%= "#{car.brand} #{car.model}"%></h2>
-          <p><%= "Year: #{car.year} | Address: #{car.address}" %></p>
-        </div>
-        <div class="card-car-pricing">
-          <b><%="#{car.price}€" %></b>/day
-        </div>
+    <% end %>
+    <%= link_to new_car_path, class: "card-car card-car-empty" do %>
+      <div>
+        <h2><i class="fas fa-car"></i></h2>
+        <h3>Add new car</h3>
       </div>
     <% end %>
-  <% end %>
-  <%= link_to new_car_path, class: "card-car card-car-empty" do %>
-    <div>
-      <h2><i class="fas fa-car"></i></h2>
-      <h3>Add new car</h3>
-    </div>
-  <% end %>
+  </div>
 </div>

@@ -1,37 +1,41 @@
-<%= link_to 'back to main menu', cars_path %>
-<div class="card-car">
+<div class="container">
 
-<h2>
-  <%= "#{@car.brand} #{@car.model}"%>
-</h2>
+  <div class="post-container">
+    <div class="row">
 
+      <div class="col-sm-5">
+        <div class="post-image">
+          <% @car.photos.each do |photo| %>
+          <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill, class:"post-image" %>
+          <% end %>
+        </div>
+      </div>
 
-<div class="card-car-infos">
-  <div>
-      <h2><%= "#{@car.brand} #{@car.model}"%></h2>
-    <p><%= "Year: #{@car.year} | Horse power: #{@car.horse_power}" %></p>
+      <div class="col-sm-7">
+        <div class="post-list">
+          <ul>
+            <li><%= "Year: #{@car.year}" %></li>
+            <li><%= "Horse power: #{@car.horse_power}" %></li>
+            <li><%= "Price: #{@car.price}€/day" %></li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="row">
+      <div class="col-sm-12">
+        <p><%= @car.description %></p>
+        <%= link_to 'back to main menu', cars_path %>
+
+        <% if policy(@car).update? %>
+          <p><%= link_to 'modify car', edit_car_path %></p>
+        <% end %>
+        <% if policy(@car).destroy? %>
+          <p><%= link_to 'delete car', car_path, method: :delete %></p>
+        <% end %>
+      </div>
+    </div>
+
   </div>
-  <h2 class="card-car-pricing"><%= "#{@car.price}€ per day" %></h2>
-  <!--%= image_tag @car.user.avatar, class: "card-car-user avatar-bordered" %-->
 </div>
-
-<ul>
-  <li><%= "Year: #{@car.year}" %></li>
-  <li><%= "Horse power: #{@car.horse_power}" %></li>
-  <li><%= "Price: #{@car.price}€/day" %></li>
-</ul>
-<p><%= @car.description %></p>
-
-<% @car.photos.each do |photo| %>
-  <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
-<% end %>
-
-<% if policy(@car).update? %>
-  <p><%= link_to 'modify car', edit_car_path %></p>
-<% end %>
-<% if policy(@car).destroy? %>
-<p><%= link_to 'delete car', car_path, method: :delete %></p>
-<% end %>
-</div>
-
-<%= link_to 'back to main menu', cars_path %>

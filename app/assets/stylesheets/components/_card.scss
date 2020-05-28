@@ -19,6 +19,9 @@
   &:hover h2 {
     color: $black-olive;
   }
+  &:hover h3 {
+    color: $black-olive;
+  }
   &:hover p {
     color: $black-olive;
   }
@@ -48,19 +51,37 @@
   color: black;
 }
 
-
 .card-car .card-car-infos {
   padding: 16px;
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
-  position: relative;
 }
 
-.card-car .card-car-empty h2 {
+.card-car-empty {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card-car-empty h2 {
   text-align: center;
-  vertical-align: middle;
-  line-height: 90px; 
+  font-size: 90px;
+}
+
+.card-car-empty h3 {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0;
+  color: black;
+}
+
+
+.card-car .card-car-empty div {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .card-car-infos .card-car-user {

@@ -8,10 +8,10 @@
 
 .card-car {
   overflow: hidden;
-  background: $ebony;
+  background: rgba(116, 115, 115, 0.788);
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
-  width: 300px;
-  border-radius: 3px;
+  width: 330px;
+  border-radius: 6px;
   &:hover {
     background: $wheat;
     text-decoration: none;
@@ -37,18 +37,21 @@
   font-size: 16px;
   font-weight: bold;
   margin: 0;
-  color: black;
+  color: white;
+  text-shadow: 1 1 2px rgba(0,0,0,0.8);
 }
 
 .card-car p {
   font-size: 10px;
   margin: 0;
-  color: $black-olive;
+  color: white;
+  text-shadow: 1 1 2px rgba(0,0,0,0.8);
 }
 
 .card-car-pricing {
   font-size: 14px;
-  color: black;
+  color: white;
+  text-shadow: 1 1 2px rgba(0,0,0,0.8);
 }
 
 .card-car .card-car-infos {

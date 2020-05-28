@@ -1,0 +1,47 @@
+.post-container {
+background-color: orange;
+border-radius: 10px;
+margin: 10px;
+}
+
+.post-product {
+  overflow: hidden;
+  height: 190px;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  display: flex;
+  align-items: center;
+  background-color: green;
+}
+
+.post-image {
+  background-color: red;
+  width: 100%;
+  border-radius: 10px;
+}
+
+.post-list {
+  background-color: purple;
+  padding: 20px;
+  }
+
+.post-product img {
+  height: 100%;
+  width: 120px;
+  object-fit: cover;
+}
+
+.post-product p {
+  font-size: 12px;
+  line-height: 1.4;
+  opacity: .7;
+  margin-bottom: 0;
+  margin-top: 8px;
+  background-color: red;
+}
+
+.post-product-description {
+  padding: 16px;
+}
+
+

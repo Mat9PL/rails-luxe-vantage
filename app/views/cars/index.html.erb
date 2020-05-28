@@ -17,13 +17,11 @@
             <h2><%= "#{car.brand} #{car.model}"%></h2>
           <p><%= "Year: #{car.year} | Horse power: #{car.horse_power}" %></p>
         </div>
-        <h2 class="card-car-pricing"><%= "#{car.price}€ per day" %></h2>
+        <div class="card-car-pricing"><b><%="#{car.price}€" %></b>/day</div>
       </div>
     <% end %>
   <% end %>
-  <%= link_to new_car_path, class: "card-car" do %>
+  <%= link_to new_car_path, class: "card-car card-car-empty" do %>
     <h2>Add new car</h2>
-    <div class="card-car-infos">
-    </div>
   <% end %>
 </div>

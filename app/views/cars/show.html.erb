@@ -6,14 +6,15 @@
       <div class="col-sm-5">
         <div class="post-image">
           <% @car.photos.each do |photo| %>
-          <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill, class:"post-image" %>
+          <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill, class:"post-image img-fluid" %>
           <% end %>
         </div>
       </div>
 
-      <div class="col-sm-7">
+      <div class="col-sm-7 align-self-center">
         <div class="post-list">
           <ul>
+            <li><%= "Name: "%><strong><%= "#{@car.brand} #{@car.model}" %></strong></li>
             <li><%= "Year: #{@car.year}" %></li>
             <li><%= "Horse power: #{@car.horse_power}" %></li>
             <li><%= "Price: #{@car.price}€/day" %></li>
@@ -25,8 +26,9 @@
 
     <div class="row">
       <div class="col-sm-12">
+        <p><b><%= "Description:" %></b></p>
         <p><%= @car.description %></p>
-        <%= link_to 'back to main menu', cars_path %>
+        <%= link_to 'back to main menu', cars_path, class: "btn btn-ghost" %>
 
         <% if policy(@car).update? %>
           <p><%= link_to 'modify car', edit_car_path %></p>

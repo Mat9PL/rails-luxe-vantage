@@ -19,6 +19,7 @@
             <li><%= "Horse power: #{@car.horse_power}" %></li>
             <li><%= "Price: #{@car.price}€/day" %></li>
           </ul>
+          <%= link_to 'book now', cars_path, class: "btn btn-outline-light mx-4" %>
         </div>
       </div>
 
@@ -31,10 +32,10 @@
         <%= link_to 'back to main menu', cars_path, class: "btn btn-ghost" %>
 
         <% if policy(@car).update? %>
-          <p><%= link_to 'modify car', edit_car_path %></p>
+          <%= link_to 'modify car', edit_car_path, class: "btn btn-ghost my-3" %>
         <% end %>
         <% if policy(@car).destroy? %>
-          <p><%= link_to 'delete car', car_path, method: :delete %></p>
+          <%= link_to 'delete car', car_path, method: :delete, class: "btn btn-ghost" %>
         <% end %>
       </div>
     </div>

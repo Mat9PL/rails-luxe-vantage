@@ -1,4 +1,19 @@
-<p>Hello</p>
-
-<%= cl_image_tag @user.photo.key, height: 300, width: 400, crop: :fill %>
+<div class="container">
+  <div class="profile">
+    <div class="bookings">
+      <h2>Bookings</h2>
+      <% if @user.bookings.length == 0 %>
+        <h4>No current bookings!!</h4>
+      <% else %>
+        <ul>
+          <% @user.bookings.each do |booking| %>
+            <li>
+            <%= link_to "#{booking.car.brand} #{booking.car.model} - #{booking.from.strftime("%a, %d %b Y")}", car_booking_path(booking.car_id, booking.id), class: "my-3 btn btn-ghost" %>
+            </li>
+          <% end %>
+        </ul>
+      <% end %>
+    </div>
+  </div>
+</div>
 

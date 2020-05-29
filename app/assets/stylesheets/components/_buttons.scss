@@ -4,12 +4,13 @@
   padding: 8px 24px;
   border-radius: 50px;
   font-weight: lighter;
-  opacity: 1;
-  transition: opacity 0.3s ease;
+  opacity: 0.6;
+  transition: opacity 0.4s ease;
 }
 
 .btn-ghost:hover {
-  opacity: 1;
+  color: #899494;
+  border-color: #899494;
 }
 
 .btn-banner {

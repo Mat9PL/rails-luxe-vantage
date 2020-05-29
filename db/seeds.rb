@@ -36,7 +36,7 @@ car_photos = [
   'https://classiccarrental.es/wp-content/uploads/2019/06/FOT6.jpg',
   'https://www.legendarycollectorcars.com/wp-content/uploads/2010/05/IMG_7063-Small.jpg',
   'https://i.pinimg.com/originals/0e/e9/f3/0ee9f30a0d4d7b35e1a309b80d023c74.jpg',
-  'https://hips.hearstapps.com/roa.h-cdn.co/assets/16/23/23256575993_178114b2e5_k.jpg', 
+  'https://hips.hearstapps.com/roa.h-cdn.co/assets/16/23/23256575993_178114b2e5_k.jpg',
   'https://imagescdn.dealercarsearch.com/dealerimages/11627/27257/fxslide2.jpg',
   'https://resources.stuff.co.nz/content/dam/images/1/x/4/s/5/n/image.related.StuffLandscapeThreeByTwo.1464x976.1x4hkg.png/1569461044055.jpg',
   'https://www.kidston.com/views/themes/uploads/2019/12/Lancia_Flaminia_Sports_0021.jpg',

@@ -9,11 +9,13 @@
     </div>
 
     <div class="booking-info">
-      <div class="booking-info-description">
-        <h2><%= "#{@car.brand} --- #{@car.model}" %></h2>
-        <p><%= @car.description %></p>
-      </div>
+
       <div class="booking-info-booking">
+        <div class="booking-image">
+          <% @car.photos.each do |photo| %>
+          <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill, class:"post-image img-fluid" %>
+          <% end %>
+        </div>
         <ul>
           <li>Brand: <b><%= @car.brand %></b></li>
           <li>Model: <b><%= @car.model %></b></li>
@@ -27,11 +29,11 @@
           <li>Address: <b><%= @car.address %></b></li>
         </ul>
       </div>
-    </div>
-    <div class="booking-image">
-      <% @car.photos.each do |photo| %>
-      <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill, class:"post-image img-fluid" %>
-      <% end %>
+      <div class="booking-info-description">
+        <h2><strong><%= "#{@car.brand.upcase}  #{@car.model.upcase}" %></strong></h2>
+        <p><%= @car.description %></p>
+        <%= link_to 'back to main menu', root_path, class: "btn btn-ghost" %>
+      </div>
     </div>
   </div>
 </div>

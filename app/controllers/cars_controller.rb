@@ -1,9 +1,7 @@
 class CarsController < ApplicationController
 before_action :set_car, only: [:show, :edit, :destroy, :update]
   def index
-    @cars = policy_scope(Car)
-
-    @cars = Car.geocoded # returns flats with coordinates
+    @cars = policy_scope(Car.search_by_model_and_brand(params[:query]))
 
     @markers = @cars.map do |car|
       {

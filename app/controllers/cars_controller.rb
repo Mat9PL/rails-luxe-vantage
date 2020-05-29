@@ -13,6 +13,8 @@ before_action :set_car, only: [:show, :edit, :destroy, :update]
   end
 
   def show
+    @booking = Booking.new
+    @booking.user = current_user
     authorize @car
   end
 

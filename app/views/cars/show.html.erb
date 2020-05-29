@@ -14,6 +14,14 @@
       <div class="col-sm-7 align-self-center">
         <div class="post-list">
           <ul>
+            <li>
+              <%= simple_form_for [@car, @booking] do |f| %>
+                <%= f.input :from %>
+                <%= f.input :to %>
+                <%= f.input :total_price %>
+              <%= f.submit class: "form-button", value: "Book now"%>
+              <% end %>
+            </li>
             <li><%= "Name: "%><strong><%= "#{@car.brand} #{@car.model}" %></strong></li>
             <li><%= "Year: #{@car.year}" %></li>
             <li><%= "Horse power: #{@car.horse_power}" %></li>

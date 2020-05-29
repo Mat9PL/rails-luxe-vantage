@@ -16,6 +16,13 @@ class BookingsController < ApplicationController
   def show
     @booking = Booking.find(params[:id])
     @car = @booking.car
+    @markers = [@car].map do |car|
+      {
+        lat: car.latitude,
+        lng: car.longitude,
+        infoWindow: render_to_string(locals: { car: car })
+      }
+    end
     authorize @booking
   end
 

@@ -22,7 +22,7 @@ User.destroy_all
 
 end
 
-cities = %w(Zurich Lausanne Renens Morges Geneva Basel Lucern Locarno Lugano Interlaken)
+cities = %w(Zurich Lausanne Renens Morges Geneva Basel Lucern Locarno Lugano Interlaken Bern Davos Thun Sion Zermatt)
 car_photos = [
   'https://www.mercedes-benz.com/en/classic/classic-cars-for-sale-mercedes-benz-all-time-stars/_jcr_content/root/slider/sliderchilditems/slideritem/image/MQ7-0-image-20190816165034/01-mercedes-benz-all-time-stars-concours-edition-cars-300-sl-1700x720.jpeg',
   'https://cdn.aarp.net/content/dam/aarp/auto/2017/02/1140-classic-car-safety.imgcache.rev30757a1d44e422554cbd71f0df22a617.jpg',
@@ -35,10 +35,18 @@ car_photos = [
   'https://classiccarrental.es/wp-content/uploads/2019/06/FOT6.jpg',
   'https://www.legendarycollectorcars.com/wp-content/uploads/2010/05/IMG_7063-Small.jpg',
   'https://i.pinimg.com/originals/0e/e9/f3/0ee9f30a0d4d7b35e1a309b80d023c74.jpg',
+  'https://hips.hearstapps.com/roa.h-cdn.co/assets/16/23/23256575993_178114b2e5_k.jpg', 
+  'https://imagescdn.dealercarsearch.com/dealerimages/11627/27257/fxslide2.jpg',
+  'https://resources.stuff.co.nz/content/dam/images/1/x/4/s/5/n/image.related.StuffLandscapeThreeByTwo.1464x976.1x4hkg.png/1569461044055.jpg',
+  'https://www.kidston.com/views/themes/uploads/2019/12/Lancia_Flaminia_Sports_0021.jpg',
+  'https://cdn07.carsforsale.com/CustomTemplatePhotos/391603/photos/ss2.5c0523ad.jpg',
+  'https://www.classiccarsfriesland.com/wp-content/uploads/2018/12/Jaguar-XK-150-FHC-british-racing-green-001-1.jpg',
+  'https://s22734.pcdn.co/wp-content/uploads/2-Front-low.jpg',
+
 ]
 
-11.times do |index|
-  file = URI.open(car_photos.pop)
+100.times do |index|
+  file = URI.open(car_photos.sample)
   brand = Faker::Vehicle.manufacture
   model = Faker::Vehicle.model(make_of_model: 'Toyota')
   year = rand(1950..2020)

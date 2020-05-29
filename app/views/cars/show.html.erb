@@ -14,10 +14,11 @@
       <div class="col-sm-7 align-self-center">
         <div class="post-list">
            <ul>
-            <li><%= "Name: "%><strong><%= "#{@car.brand} #{@car.model}" %></strong></li>
+            <li><%= "Name: "%><strong><%= "#{@car.brand.upcase} #{@car.model.upcase}" %></strong></li>
             <li><%= "Year: #{@car.year}" %></li>
             <li><%= "Horse power: #{@car.horse_power}" %></li>
             <li><%= "Price: #{@car.price}€/day" %></li>
+            <li><%= "Address: #{@car.address}" %></li>
           </ul>
 
         </div>
@@ -42,8 +43,7 @@
         <%= simple_form_for [@car, @booking] do |f| %>
                 <%= f.input :from %>
                 <%= f.input :to %>
-                <%= f.input :total_price %>
-              <%= f.submit class: "btn btn-outline-light", value: "Book now"%>
+              <%= f.submit class: "btn btn-outline-light my-3", value: "Book now"%>
               <% end %>
       </div>
     </div>

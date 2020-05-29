@@ -57,7 +57,7 @@ before_action :set_car, only: [:show, :edit, :destroy, :update]
   private
 
   def car_params
-    params.require(:car).permit(:brand, :model, :year, :horse_power, :price, :description, :user_id, photos: [])
+    params.require(:car).permit(:brand, :model, :year, :horse_power, :address, :price, :description, :user_id, photos: [])
   end
 
   def set_car

@@ -1,1 +1,30 @@
-<h1>car booking</h1>
+<div class="container">
+  <div class="booking">
+    <h1>Booking information</h1>
+      <div class="booking-image">
+          <% @car.photos.each do |photo| %>
+          <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill, class:"post-image img-fluid" %>
+          <% end %>
+      </div>
+    <div class="booking-info">
+      <div class="booking-info-description">
+        <h2><%= "#{@car.brand} - #{@car.model}" %></h2>
+        <p><%= @car.description %></p>
+      </div>
+      <div class="booking-info-booking">
+        <ul>
+          <li>Brand: <b><%= @car.brand %></b></li>
+          <li>Model: <b><%= @car.model %></b></li>
+          <li>Year: <b><%= @car.year %></b></li>
+          <li>Horsepower: <b><%= @car.horse_power %></b></li>
+          <li>From: <b><%= @booking.from.strftime("%a, %d %b Y") %></b></li>
+          <li>To: <b><%= @booking.to.strftime("%a, %d %b %Y") %></b></li>
+          <li>Number of days: <b><%= (@booking.to - @booking.from) %></b></li>
+          <li>Price per day: <b><%= @car.price %>€</b></li>
+          <li>Total: <b><%= @car.price %></b></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  
+</div>

@@ -59,5 +59,5 @@ car_photos = [
   new_car = Car.new(address: address, brand: brand, model: model, year: year, description: description, horse_power: horse_power, price: price, user: user)
   new_car.save!
   new_car.photos.attach(io: file, filename: "#{new_car.model} photo #{new_car.id}")
-  puts index
+  puts 100 - index
 end
